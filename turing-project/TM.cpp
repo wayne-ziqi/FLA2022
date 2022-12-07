@@ -7,6 +7,7 @@
 #include <iostream>
 #include <fstream>
 #include <regex>
+#include <cassert>
 
 static inline int len_digit(int i) {
     if (i >= 1000000000) return 10;
@@ -280,6 +281,7 @@ void TM::advanceTM() {
         accepted = true;
     }
 
+    ++step;
     auto deltas = deltaMap.equal_range(curStat);
     auto found = deltaMap.end();
     for (auto fun = deltas.first; fun != deltas.second; ++fun) {
@@ -458,7 +460,6 @@ int TM::runTM(const std::string &input) {
     isHalt = false;
     if (verbose)printID();
     while (!isHalt) {
-        ++step;
         advanceTM();
         if (verbose && !isHalt)printID();
         // step++

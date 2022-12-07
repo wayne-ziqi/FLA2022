@@ -12,7 +12,7 @@ enum ErrorCode {
     ERROR_SYNTAX,           // syntax errors
     ERROR_UNDEF,            // symbol used before defined
     ERROR_DEF,              // definition error
-    ERROR_STATE,
+    ERROR_STATE,            // state undefined
     ERROR_DElTA,            // transfer function error
     ERROR_TAPEMIS,          // tape symbol not found
     ERROR_INMIS,            // input symbol not found
